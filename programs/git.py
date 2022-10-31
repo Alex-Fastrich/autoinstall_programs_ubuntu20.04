@@ -4,23 +4,19 @@ from re import sub
 
 
 orders = {
-    'NEOVIM\n- Установка -': 'apt install neovim -y',
-    '- Создаю директории для конфига -': 'mkdir way_user/.config/nvim',
-    '- Скачиваю конфиг neovim в директорию -': 'wget -O way_user/.config/nvim/init.vim https://www.dropbox.com/s/m9psbp3pvcm09o4/init.vim?dl=0',
-    '- Скачиваю vim-plug -': 'wget -O way_user/.config/nvim/init.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim',
-    '- Скачиваю тему для neovim -': 'wget -O /usr/share/nvim/runtime/colors/materialbox.vim https://www.dropbox.com/s/ttgi0g0jqt4mxzk/materialbox.vim?dl=0',
+    'GIT\n- Установка -': 'apt install git',
     }
 
 def ppa():
     order_ppa = run(
-        'add-apt-repository ppa:neovim-ppa/unstable -y',
+        'add-apt-repository ppa:git-core/ppa',
         shell=True,
         stderr=PIPE,
         encoding='utf-8',
         )
     order_ppa_stderr = sub(r'\n', '. ', order_ppa.stderr)
     result_order_ppa = ('OK', order_ppa_stderr)[bool(order_ppa.returncode)]
-    return f'- Добавляю репозиторий NEOVIM - {result_order_ppa}\n'
+    return f'- Добавляю репозиторий GIT - {result_order_ppa}\n'
 
 
 def install(way_user):

@@ -1,1 +1,1 @@
-from . import nvim
+from . import nvim, git
