@@ -1,22 +1,26 @@
-#! /bin/python3
+#! /bin/python3.11
 from subprocess import run, PIPE
-from programs import nvim, git
+from config import programs_install
+from gears import execute
 
-user = '/home/fastrich'
-programs_install = (
-    nvim,
-    git,
-    )
 
-with open('logs.txt', 'w') as logs:
-    logs.write('PPA\n')
-for program in programs_install:
+def exe_prog(programs):
+    '''Передает список с программами функции execute и
+    записывает ее вывод в logs файл'''
+
+    with open('logs.txt', 'w') as logs:
+        logs.write('PPA INSTALL\n\n')
+        for program in programs:
+            if program.ppa:
+                logs.writelines(execute(program.ppa))
+        logs.write('\n\n')
+
+    run('apt update', shell=True)
+
     with open('logs.txt', 'a') as logs:
-        logs.write(program.ppa())
+        logs.write('PROGRAMS INSTALL\n\n')
+        for program in programs:
+            logs.writelines(execute(program.orders))
 
-run('apt update', shell=True)
 
-for program in programs_install:
-    with open('logs.txt', 'a') as logs:
-        logs.write('\n')
-        logs.writelines(program.install(user))
+exe_prog(programs_install)

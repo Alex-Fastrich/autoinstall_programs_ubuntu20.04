@@ -1,13 +1,16 @@
-PPA
+PPA INSTALL
+
 - Добавляю репозиторий NEOVIM - OK
 - Добавляю репозиторий GIT - OK
 
-NEOVIM
+
+PROGRAMS INSTALL
+
+Neovim
 - Установка - OK
 - Создаю директории для конфига - mkdir: невозможно создать каталог «/home/fastrich/.config/nvim»: Файл существует. 
 - Скачиваю конфиг neovim в директорию - OK
 - Скачиваю vim-plug - OK
 - Скачиваю тему для neovim - OK
-
-GIT
+Git
 - Установка - OK
