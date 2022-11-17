@@ -1,9 +1,9 @@
 #! /bin/python3
-import programs as pr
+import programs as p
 
 user = '/home/fastrich'
 
 programs_install = (
-    pr.nvim,
-    pr.git,
+    p.nvim,
+    p.git,
 )

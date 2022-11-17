@@ -1,16 +1,24 @@
 PPA INSTALL
 
-- Добавляю репозиторий NEOVIM - OK
-- Добавляю репозиторий GIT - OK
+- Добавляю репозиторий NEOVIM - False
+Попробуйте ввести команду в ручную: add-apt-repository ppa:neovim-ppa/unstable -y
+- Добавляю репозиторий GIT - False
+Попробуйте ввести команду в ручную: add-apt-repository ppa:git-core/ppa
 
 
 PROGRAMS INSTALL
 
-Neovim
-- Установка - OK
-- Создаю директории для конфига - mkdir: невозможно создать каталог «/home/fastrich/.config/nvim»: Файл существует. 
-- Скачиваю конфиг neovim в директорию - OK
-- Скачиваю vim-plug - OK
-- Скачиваю тему для neovim - OK
-Git
-- Установка - OK
+= Neovim =
+- Установка - False
+Попробуйте ввести команду в ручную: apt install neovim -y
+- Создаю директории для конфига - False
+Попробуйте ввести команду в ручную: mkdir /home/fastrich/.config/nvim
+- Скачиваю конфиг neovim в директорию - False
+Попробуйте ввести команду в ручную: wget -O /home/fastrich/.config/nvim/init.vim https://www.dropbox.com/s/m9psbp3pvcm09o4/init.vim?dl=0
+- Скачиваю vim-plug - False
+Попробуйте ввести команду в ручную: wget -O /usr/share/nvim/runtime/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+- Скачиваю тему для neovim - False
+Попробуйте ввести команду в ручную: wget -O /usr/share/nvim/runtime/colors/materialbox.vim https://www.dropbox.com/s/ttgi0g0jqt4mxzk/materialbox.vim?dl=0
+= Git =
+- Установка - False
+Попробуйте ввести команду в ручную: apt install git
