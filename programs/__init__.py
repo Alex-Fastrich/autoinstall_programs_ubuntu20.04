@@ -1,1 +1,2 @@
-from . import nvim, git
+#! /bin/python3
+from programs import nvim, git
