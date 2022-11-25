@@ -1,4 +1,4 @@
-#! /bin/python3.11
+#! /bin/python3
 from subprocess import run
 from typing import List, Tuple, Dict
 

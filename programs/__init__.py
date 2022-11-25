@@ -1,2 +1,2 @@
-#! /bin/python3.11
+#! /bin/python3
 from programs import nvim, git
